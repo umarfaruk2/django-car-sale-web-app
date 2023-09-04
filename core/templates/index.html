@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div
+  style="
+    background-image: url('/static/images/banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+  ">
+  <div class="h-[500px] flex items-center justify-center">
+    <div class="text-center">
+      <h3 class="text-4xl text-white font-bold">CREATE YOUR FUTURE WITH US!</h3>
+      <p class="w-[50%] text-gray-500 mx-auto py-5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+        cupiditate recusandae nulla illo. Vero quaerat hic atque alias a ut!
+      </p>
+      <button class="border-4 py-2 px-4 text-white rounded-full">
+        MORE INFO
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- book showcase -->
+
+<div>
+  <h3 class="text-center text-gray-700 my-10 text-3xl">
+    BOOKS
+  </h3>
+
+  
+<div class="grid grid-flow-row grid-cols-3 gap-5 mx-10">
+  {% for item in course %}
+    <div class="rounded overflow-hidden shadow-lg">
+      <img
+        class="w-full h-[197px]"
+        src="{{item.images.url}}"
+        alt="Sunset in the mountains"
+      />
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">{{item.title}}</div>
+        <p class="text-gray-700">
+          <span class="font-bold">Department </span>: {{item.department}}
+        </p>
+        <p class="my-2 text-gray-700">
+          <span class="font-bold">Course length </span>: {{item.course_length}}
+          month
+        </p>
+        <p class="text-gray-700 text-base">
+          <span class="font-bold">Description </span>: {{item.description}}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="rounded overflow-hidden shadow-lg">
+      <img
+        class="w-full h-[197px]"
+        src="/static/images/banner.jpg"
+        alt="Sunset in the mountains"
+      />
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">New book</div>
+        <p class="text-gray-700">
+          <span class="font-bold">Author </span>: Faruk
+        </p>
+        <p class="my-2 text-gray-700">
+          <span class="font-bold">ISBN </span>: 389899hjfh
+        </p>
+        <p class="my-2 text-gray-700">
+          <span class="font-bold">Generic </span>: Horror
+        </p>
+        <p class="my-2 text-gray-700">
+          <span class="font-bold">Quantity </span>: 3
+        </p>
+        
+        <p class="my-2 text-gray-700">
+          <span class="font-bold">Publish Date </span>: 2020/2/3
+        </p>
+        <a href="" class="bg-cyan-500 px-4 py-2 rounded-md text-white mt-2">More Info</a>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
