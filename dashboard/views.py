@@ -23,18 +23,15 @@ def add_product(request):
 
 def orderList(request):
     my_order = OrderModel.objects.filter(user = request.user)
-
     return render(request, 'dashboard/my_order.html', {'data': my_order})
 
 def manage_order(request):
     orders = OrderModel.objects.all()
-
     return render(request, 'dashboard/manage_order.html', {'data': orders})
 
 
 def product_list(request):
     product = AddProductModel.objects.all()
-    
     return render(request, 'dashboard/product_list.html', {'data': product})
 
 class UpdateProduct(UpdateView):
@@ -45,7 +42,6 @@ class UpdateProduct(UpdateView):
 
 def delete_order(request, id):
     OrderModel.objects.get(pk = id).delete() 
-
     return redirect('manage_order')
 
 def order_status(request, id):
@@ -64,3 +60,6 @@ def order_status(request, id):
         order.save()
             
         return redirect('manage_order')
+
+
+    

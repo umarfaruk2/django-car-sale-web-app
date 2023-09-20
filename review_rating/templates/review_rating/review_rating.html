@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %} 
+{% load tailwind_filters%}
+
+{% block title %}
+    Add review
+{% endblock title %}
+
+
+{% block content %}
+    <div class="mt-5 w-[50%] mx-auto">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input class="text-center bg-green-500 text-white py-2 px-4 rounded-md" type="submit" value="Submit" />
+        </form>
+    </div>
+{% endblock content %}

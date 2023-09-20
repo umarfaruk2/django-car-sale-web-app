@@ -3,12 +3,14 @@ from dashboard.models import AddProductModel
 from .models import OrderModel
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
+from review_rating.models import ReviewRatingModel
 
 
 def order_detail(request, id):
 	data = AddProductModel.objects.get(pk = id) 
+	review_and_rating = ReviewRatingModel.objects.filter(product = data)
 
-	return render(request, 'order/order.html', {'data': data})
+	return render(request, 'order/order.html', {'data': data, 'review': review_and_rating})
 
 
 def order(request, id):
@@ -23,7 +25,3 @@ def order(request, id):
 		return redirect('home') 
 	else:
 		return redirect('login')
-
-
-
-    

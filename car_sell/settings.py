@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'accounts',
     'dashboard',
     'order',
+    'review_rating',
 ]
 
 TAILWIND_APP_NAME = 'theme'

@@ -3,6 +3,11 @@
 {% block content %}
 
 <div class="container mx-auto mt-8 p-4">
+    {% for message in messages %}
+        <span class="text-xl">
+            {{message}} 
+        </span>
+    {% endfor %}
     <div class="w-full">
         <img src="{{data.image.url}}" alt="Product Image" class="w-full h-[300px]">
     </div>
@@ -22,6 +27,25 @@
         Order
  	   </button>
 	</a>
+    
+    <!-- review rating -->
+
+    <div class="mt-5 mb-6">
+        <h3 class="text-xl font-bold mb-3">Review and rating</h3>
+
+        {% for item in review %}
+          <div class="bg-gray-100 p-3 mb-3">
+                <p>Review: {{item.review}}</p>
+                <p>Rating: {{item.rating}}</p>
+            </div>
+        {% endfor %} 
+
+        <a href="{% url 'review' data.id %}" class="bg-cyan-500 text-white p-2 rounded-md">Add a review</a>
+    </div>
+
 </div>
+
+
+
   
 {% endblock content %}
