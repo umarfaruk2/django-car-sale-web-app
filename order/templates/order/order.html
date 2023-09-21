@@ -4,11 +4,11 @@
 
 <div class="container mx-auto mt-8 p-4">
     {% for message in messages %}
-        <span class="text-xl">
+        <span class="text-xl text-white bg-red-400 p-2">
             {{message}} 
         </span>
     {% endfor %}
-    <div class="w-full">
+    <div class="w-full mt-2">
         <img src="{{data.image.url}}" alt="Product Image" class="w-full h-[300px]">
     </div>
 
@@ -42,7 +42,6 @@
 
         <a href="{% url 'review' data.id %}" class="bg-cyan-500 text-white p-2 rounded-md">Add a review</a>
     </div>
-
 </div>
 
 

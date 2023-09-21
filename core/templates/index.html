@@ -1,15 +1,15 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 <div
   style="
-    background-image: url('/static/images/banner.jpg');
+    background-image: url('/static/images/car_banner.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 500px;
   ">
-  <div class="h-[500px] flex items-center justify-center">
+  <div class="h-[500px] flex items-center justify-center bg-gray-800 opacity-70">
     <div class="text-center">
-      <h3 class="text-4xl text-gray-700 font-bold">FIND YOUR PERFECT CAR!</h3>
-      <p class="w-[50%] text-gray-600 mx-auto py-5">
+      <h3 class="text-4xl text-white font-bold">FIND YOUR PERFECT CAR!</h3>
+      <p class="w-[50%] text-white mx-auto py-5">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
         cupiditate recusandae nulla illo. Vero quaerat hic atque alias a ut!
       </p>
@@ -39,7 +39,6 @@
         <div class="font-bold text-xl mb-2">{{item.title}}</div>
         <p class="my-2 text-gray-700">
           <span class="font-bold">price </span>: {{item.price}}
-          month
         </p>
         <p class="text-gray-700 text-base mb-3">
           <span class="font-bold">Description </span>: {{item.description}}
@@ -52,8 +51,76 @@
     {% endfor %}
   </div>
 
-  <!-- footer -->
+  <!-- Testimonials Section -->
+<section class="bg-gray-100 py-12 mt-10">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-semibold text-center mb-8">Customer Testimonials</h2>
 
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <div class="p-4">
+                    <p class="text-gray-600 text-sm">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non purus vel nunc dictum eleifend."</p>
+                    <p class="text-gray-700 mt-2">- John Doe, Happy Customer</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <div class="p-4">
+                    <p class="text-gray-600 text-sm">"The service and selection at this dealership are top-notch. I found my dream car here!"</p>
+                    <p class="text-gray-700 mt-2">- Jane Smith, Satisfied Buyer</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <div class="p-4">
+                    <p class="text-gray-600 text-sm">"I had a great experience purchasing my car from this website. Highly recommended!"</p>
+                    <p class="text-gray-700 mt-2">- David Johnson, Repeat Customer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+  <!-- Blog Section -->
+<section class="py-12">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-semibold text-center mb-8">Latest Blog</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="/static/images/car_1.jpg"Blog Post 1" class="w-full h-48 object-cover object-center">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Top 10 New Car Models of the Year</h3>
+                    <p class="text-gray-600 text-sm">Posted on June 15, 2023</p>
+                    <p class="text-gray-700 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non purus vel nunc dictum eleifend.</p>
+                    <a href="#" class="text-blue-600 hover:underline mt-4 inline-block">Read More</a>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="/static/images/car_2.jpg" alt="Blog Post 2" class="w-full h-48 object-cover object-center">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Luxury Cars vs. Sports Cars: Which Style Suits You?</h3>
+                    <p class="text-gray-600 text-sm">Posted on June 10, 2023</p>
+                    <p class="text-gray-700 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non purus vel nunc dictum eleifend.</p>
+                    <a href="#" class="text-blue-600 hover:underline mt-4 inline-block">Read More</a>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="/static/images/car_3.jpg" alt="Blog Post 3" class="w-full h-48 object-cover object-center">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Exploring the History of Classic Car Collecting</h3>
+                    <p class="text-gray-600 text-sm">Posted on June 5, 2023</p>
+                    <p class="text-gray-700 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non purus vel nunc dictum eleifend.</p>
+                    <a href="#" class="text-blue-600 hover:underline mt-4 inline-block">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <!-- footer -->
 <footer class="bg-gray-300 mt-10">
   <div
     class="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8"
