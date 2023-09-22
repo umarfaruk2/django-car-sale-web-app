@@ -17,8 +17,11 @@
             <a href="" class="text-gray-700"> 
             Blog</a>
           {% if request.user.is_authenticated %}
-            <a href="" class="text-gray-700">Admin</a>
-            <a href="{% url 'add_product' %}" class="text-gray-700">Dashboard</a>
+              {% if request.user.is_staff %}
+                <a href="{% url 'add_product' %}" class="text-gray-700">Admin</a>
+              {% else %}
+                <a href="{% url 'add_product' %}" class="text-gray-700">Dashboard</a>
+            {% endif %}
           {% endif %}
           {% if not request.user.is_authenticated %}
             <a href="{% url 'signup' %}" class="text-gray-700">
