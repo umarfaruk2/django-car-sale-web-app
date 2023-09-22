@@ -1,5 +1,5 @@
 """
-ASGI config for car_sell project.
+ASGI config for car_sale project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'car_sell.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'car_sale.settings')
 
 application = get_asgi_application()
